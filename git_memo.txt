@@ -1,0 +1,43 @@
+깃 저장소 (repository)이 개념이 
+폴더? 처럼 뭐하나할때 생성해서 관리하면 되는데,
+
+repository별로 주소가 있음
+ex) https://github.com/imaramm/unity
+
+
+
+.git 폴더 
+저게 repository상태 감시해주는 거.
+ㄴ 파일이 추가되거나 삭제되거나 수정되는거 감시해서 repository에 반영해줌.
+그래서 집에서도 똑같이 이 repository를 clone해서 쓰면 고대로 코드를 받아볼 수 있음
+
+아까전에 내가 ssh 토큰 ? public key받고 이런거는 이 컴퓨터에서 너 깃 계정에 올릴 수 있도록 허가 받는 과정.
+이 컴퓨터에 있는 키를 너 계정에 등록해서
+이 컴퓨터 사용자는 인증받은 사용자 이기 때문에 repository수정할 수 있도록 해줌
+근데 그 키가없으면 그냥
+public repository는 그냥 받아서 볼 수 있는데 수정은 안됨.
+한다하면은..
+
+
+<<주요 명령어>>
+1. git repository 복사
+$ git clone https://github.com/imaramm/unity
+ㄴ insert 누르고 shift + insert : 붙여넣기
+
+2. 
+git이 로컬 저장소가 있고 remote 저장소가 있거든
+이 컴퓨터는 로컬이고 저 사이트? 그런건 remote
+git add -> git commit : local저장소에 이 파일들을 등록
+git push : remote 저장소에 이 파일들을 등록하는 개념
+
+그래서 
+저 저장소에서 
+
+$ git status : 상태확인
+$ git add * : git local 저장소에 commit하기 위해 일단 add (등록)
+$ git commit -m'inheritance, myhome appliances' : local저장소에 commit
+$ git push : 원격저장소에 올라감.
+
+이게 git이 협업툴.
+팀원들끼리 저 커밋된 내용이 어떤 내용인지 설명하기 위한 메시지를 붙여주는거
+개발자들은 깃 관리를 하는게 
