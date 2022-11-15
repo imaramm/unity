@@ -1,0 +1,13 @@
+깃 저장소 (repository)이 개념이 
+폴더? 처럼 뭐하나할때 생성해서 관리하면 되는데,
+
+repository별로 주소가 있음
+ex) https://github.com/imaramm/unity
+
+<git repository 복사>
+$ git clone https://github.com/imaramm/unity
+ㄴ insert 누르고 shift + insert : 붙여넣기
+
+
+.git 폴더 
+저게 repository상태 감시해주는 거.
