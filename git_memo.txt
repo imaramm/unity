@@ -4,7 +4,11 @@
 repository별로 주소가 있음
 ex) https://github.com/imaramm/unity
 
-dddddddddd
+user이름이 저거인 다른 계정 있는거같은데
+그때 같이 할 때 
+인증 키까지 저 계정으로 다받았었음
+지금 저거말고 다른계정할거면
+인증키까지 다 변경해야 함.ㅋ
 
 .git 폴더 
 저게 repository상태 감시해주는 거.
