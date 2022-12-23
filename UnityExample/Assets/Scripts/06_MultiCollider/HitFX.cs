@@ -13,6 +13,6 @@ public class HitFX : MonoBehaviour
     {
         transform.localScale =
             transform.localScale +
-            (Vector3.one * 5f * Time.deltaTime);
+            (Vector3.one * 10f * Time.deltaTime);
     }
 }
