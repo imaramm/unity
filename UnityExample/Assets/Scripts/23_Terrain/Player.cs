@@ -21,7 +21,8 @@ public class Player : MonoBehaviour
     //}
     //-------------------------------------------------------------------------------------------------------------------------------
 
-
+    [SerializeField]
+    private GameObject fxPangPrefab = null;
 
     private CharacterController cc = null;
     private Camera cam = null;
@@ -30,7 +31,6 @@ public class Player : MonoBehaviour
     private float rotSpeed = 100f;
     private Vector3 camRot = Vector3.zero;
 
-    private float moveFast = 10000f;
 
 
     private void Awake()
@@ -43,6 +43,9 @@ public class Player : MonoBehaviour
     {
         MovingProcess();
         LookProcess();
+
+        if (Input.GetMouseButtonDown(0))
+            SpawnFxPang();
     }
 
     private void MovingProcess()
@@ -50,17 +53,23 @@ public class Player : MonoBehaviour
         float axisH = Input.GetAxis("Horizontal");
         float axisV = Input.GetAxis("Vertical");
 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            moveSpeed = 10000f;
+        }
+
+
         Vector3 camF = cam.transform.forward;
         camF.y = 0f; // y축을 0으로 만들고 (아니면 하늘로 날라가버리니깐)
         camF.Normalize(); // 그래야 길이가 1인 벡터가 만들어진다
-        Vector3 dirf = camF * axisV;
+        Vector3 dirF = camF * axisV;
 
         Vector3 camR = cam.transform.right;
         camR.y = 0f;
         camR.Normalize();
         Vector3 dirR = camR * axisH;
 
-        Vector3 dir = dirf + dirR;
+        Vector3 dir = dirF + dirR;
         dir.Normalize();
 
         //cc.Move 중력을 계산안하고
@@ -68,13 +77,7 @@ public class Player : MonoBehaviour
         cc.SimpleMove(dir * moveSpeed * Time.deltaTime);
     }
 
-    private void MoveFast()
-    {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-
-        }
-    }
+    
 
 
     private void LookProcess()
@@ -91,6 +94,10 @@ public class Player : MonoBehaviour
         //transform.Rotate(rot * rotSpeed * Time.deltaTime);
     }
 
+    private void SpawnFxPang()
+    {
+        Instantiate(fxPangPrefab, cam.transform.position + (cam.transform.forward * 3f), Quaternion.identity);
+    }
 
 
 }// end of class Player

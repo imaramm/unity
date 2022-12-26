@@ -466,6 +466,7 @@
 "Assets/Scripts/22_BGScroll/BGScroll.cs"
 "Assets/Scripts/22_BGScroll/st_BGScroll.cs"
 "Assets/Scripts/23_Terrain/Player.cs"
+"Assets/Scripts/23_Terrain/st_Player.cs"
 -langversion:9.0
 
 /deterministic
